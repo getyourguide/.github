@@ -1,0 +1,8 @@
+name: Refresh Service Observability Data
+
+on:
+  workflow_dispatch:
+
+jobs:
+  job1:
+    uses: getyourguide/.github/workflows-templates/refresh-monitoring.yml@master
