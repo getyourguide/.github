@@ -1,56 +1,10 @@
-name: refresh_monitoring
+name: Refresh Service Observability Data
 
 on:
-  workflow_call:
   workflow_dispatch:
   schedule:
     - cron: '0 7 * * 1'
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Run action
-        uses: getyourguide/monitoring-refresh/monitoring-refresh@master
-        env:
-          DD_API_KEY: ${{ secrets.DATADOG_API_KEY }}
-          DD_APP_KEY: ${{ secrets.DATADOG_APP_KEY }}
-
-      - name: Commit files
-        id: commit
-        continue-on-error: true
-        run: |
-          git config --local user.email "noreply@github.com"
-          git config --local user.name "Automated GitHub Action"
-          git add -A
-          git commit -m "[SKIP CI] Refresh monitoring" -a
-
-      - name: Push changes
-        if: steps.commit.outcome == 'success'
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: monitoring-refresh
-          force: true
-
-      - name: Create Pull Request
-        if: steps.commit.outcome == 'success'
-        uses: peter-evans/create-pull-request@v3.14.0
-        with:
-          branch: monitoring-refresh
-          delete-branch: true
-          title: '[SKIP CI] Automated monitoring refresh'
-          labels: Observability
-          body: This job regularly fetches the latest object from Datadog - monitors, dashboards and SLOs -
-            for the corresponding services.
-
-
-            If an object is not synced here, it means that it is not properly tagged.
-            Please read the GYG Observability docs for more details.
-
-
-            For support, reach out on \#observability-support
+  job1:
+    uses: getyourguide/.github/workflows-templates/refresh-monitoring.yml@master
