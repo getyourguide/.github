@@ -1,5 +1,5 @@
 version: '1'
-  service:
-    name: github
-    owner: den
-    type: Other
+service:
+  name: github
+  owner: den
+  type: Other
