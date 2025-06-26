@@ -7,13 +7,11 @@ IMPORTANT: please read me before opening the pull request:
 4. Learn more about code reviews here: https://getyourguide.slack.com/archives/C08TS816V3L
 -->
 
-# Description
-
 <!-- (Please explain the changes you made here.) -->
 
-Jira ticket: GYG-XXXX
+Jira: GYG-XXXX
 
-# How was this tested
+## How was this tested
 
 <!-- Mention anything specific -->
 
