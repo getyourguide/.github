@@ -7,7 +7,5 @@
 
 <!-- Leave this comment here to receive an automated PR description -->
 
----
-
 <!-- Anything you add here will be preserved by the automation that sets the description -->
 
