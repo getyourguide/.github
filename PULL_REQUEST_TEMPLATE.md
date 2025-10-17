@@ -5,7 +5,7 @@
 4. Learn more about code reviews here: https://getyourguide.slack.com/archives/C08TS816V3L
 -->
 
-<!-- Leave this comment here to receive an automated PR description -->
-
 <!-- Anything you add here will be preserved by the automation that sets the description -->
+
+<!-- Leave this comment here to receive an automated PR description -->
 
