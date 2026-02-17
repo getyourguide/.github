@@ -1,0 +1,18 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    open-pull-requests-limit: 5
+    schedule:
+      interval: daily
+      time: "08:30"
+      timezone: Europe/Berlin
+    groups:
+      patch-and-minor:
+        update-types:
+          - patch
+          - minor
+    cooldown:
+      default-days: 7
+      exclude:
+        - getyourguide/*
